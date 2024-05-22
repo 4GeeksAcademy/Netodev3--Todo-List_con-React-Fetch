@@ -20,14 +20,14 @@ const Home = () => {
     }
   };
 
-  const deleteEvent = (index) => {
+  const handleDelete = (index) => {
     const listaActualizada = todos.filter(
       (t, currentIndex) => index !== currentIndex
     );
     setTodos(listaActualizada);
   };
 
-  const deleteEventAll = () => {
+  const handleDeleteAll = () => {
     setTodos([]);
   };
 
@@ -116,7 +116,7 @@ const Home = () => {
             {value.label}
             <button
               className="btn btn-light"
-              onClick={() => deleteEvent(index)}
+              onClick={() => handleDelete(index)}
             >
               X
             </button>
@@ -124,7 +124,7 @@ const Home = () => {
         ))}
       </ul>
       <div className="divCenter d-flex justify-content-center m-3">
-        <button className="btn btn-success" onClick={deleteEventAll}>
+        <button className="btn btn-success" onClick={handleDeleteAll}>
           Delete All
         </button>
       </div>
